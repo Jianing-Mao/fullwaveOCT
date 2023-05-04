@@ -1,16 +1,17 @@
 clear
 close all
-dia = 4e-6;
-samplePoints = 1024;
-nm=1.33;
-ns = 1.58;
-nang=361;
-lam = linspace(1250e-9,1350e-9,samplePoints)*1e9;
+dia = 4e-6; % particle diameter
+samplePoints = 1024; % number of wavelength sampling
+nm=1.33; % backgroud refractive index
+ns = 1.58; % particle refractive index
+nang=361; % sampling angles number of SPF 
+lam_begin = 1250e-9;
+lam_end = 1350e-9;
+lam = linspace(lam_begin,lam_end,samplePoints); % wavelengths
+pho = 0.0001; % number density
 [~,ang,Miee,C] = Mie(lam/1e9,dia,ns,nm,nang);
 k0 = 2*pi/(1260/1e9)*nm;
-nang = 361;
-pho = 0.0001;
-Nb=pho*(1e18)*(4/3*pi*(dia/2)^3);
+Nb=pho*(1e18)*(4/3*pi*(dia/2)^3); % concentration
 for i=1:length(lam)
 us(i)=(C(i).sca)*pho*1e16;
 end

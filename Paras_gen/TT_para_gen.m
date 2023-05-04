@@ -1,17 +1,18 @@
 %% params
 clear all
-% close all
-dia = 6e-6;%
+dia = 6e-6;% particle diameter
 eps = 1e-9;
-samplePoints = 1024;
-nm=1.33;
-ns = 1.58;
-nang = 361;
-lam = linspace(1250e-9,1350e-9,samplePoints);
+samplePoints = 1024; % number of wavelength sampling
+nm=1.33; % backgroud refractive index
+ns = 1.58; % particle refractive index
+nang = 361; % sampling angles number of SPF 
+lam_begin = 1250e-9;
+lam_end = 1350e-9;
+lam = linspace(lam_begin,lam_end,samplePoints); % wavelengths
 [~,ang,Miee,C] = Mie(lam,dia,ns,nm,nang);
 ang_pi = ang/180*pi;
-x_final = zeros(samplePoints,5);
-atten = [linspace(1,1,(nang-1)/2),linspace(1,5,(nang-1)/2+1)];
+x_final = zeros(samplePoints,5); % parameters of TT
+atten = [linspace(1,1,(nang-1)/2),linspace(1,5,(nang-1)/2+1)]; % scaling
 options = optimoptions('lsqcurvefit','Algorithm','trust-region-reflective','MaxIterations',100000);
 %% Fit
 for i=1:samplePoints
