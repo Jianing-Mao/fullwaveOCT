@@ -34,5 +34,7 @@ For the A-line F-BDR simulation:
 
 Run [lookFBDR.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/lookFBDR.m) to show the F-BDR result.
 
+# Example
+
 # Acknowledgement
 The codes are built on the open-source code for MC in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
