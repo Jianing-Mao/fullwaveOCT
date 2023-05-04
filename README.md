@@ -1,5 +1,6 @@
 # Full-Wavelength-Monte-Carlo
 Fast Monte Carlo simulation of full-wavelength backscattered diffuse reflectance (F-BDR) and FD-OCT
+![full-wavelength FD-OCT B-scan image](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/example/Bscan_image.png)
 ## Get Started
 The code is builded in MATLAB R2020a and ANSI C. Please install the [MatScat](https://ww2.mathworks.cn/matlabcentral/fileexchange/36831-matscat) in your MATLAB.
 ## Prepare scattering parameters
@@ -17,9 +18,9 @@ Run [GenTissue.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/Ge
 
 For the A-line F-BDR simulation:
 
-Compile the [fullwave_FBDR.c](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/fullwave_FBDR.c)
+Compile the [fullwaveMC.c](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/fullwave_FBDR.c)
 ```sh
-gcc fullwave_FBDR.c -lm -o test
+gcc fullwaveMC.c -lm -o test
 ```
 
 Run the generated file with two arguments: (1) arg1:1/0, 1 means continuous simulation up to the wavelength sampling point specified in arg2, 0 means a single simulation of a wavelength sampling point specified in arg2; (2) arg2: 1-samplePoints, wavelength sampling point. For example, continuous simulation from sampling points 1-1024:
@@ -28,18 +29,40 @@ Run the generated file with two arguments: (1) arg1:1/0, 1 means continuous simu
 ```
 For the B-scan simulation:
 
+Compile the [fullwaveMC_Bscan.c](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/fullwaveMC_Bscan.c)
+```sh
+gcc fullwaveMC_Bscan.c -lm -o test
+```
+
+Run the generated file with one arguments: (1) arg1: the index of the detectors:
+```sh
+./test 128
+```
+You can generate a Bscan by running the simulation of all of the detector in parallel:
+```sh
+./test 1
+./test 2
+...
+```
+
 ### Step III: show the results
 
 For the A-line F-BDR simulation:
 
 Run [lookFBDR.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/lookFBDR.m) to show the F-BDR result.
 
+For the B-scan simulation:
+
+Run [lookFBDR_Bscan.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/lookFBDR_Bscan.m) to show the F-BDR result.
+
+Run [lookImage_Bscan.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/lookImage_Bscan.m) to show the B-scan image with full-wavelength information.
+
 # Example
 
 # To be implement
 * Integrate all parameters and procedures into a calling function (now we need to carefully check the parameters of the generation, running, and viewing codes)
 * More realistic light source
-* ......
+* ...
 
 # Acknowledgement
 The codes are built on the open-source code for MC in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
