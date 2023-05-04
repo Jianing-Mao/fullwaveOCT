@@ -33,8 +33,8 @@
 #define COS90D 1.0E-6                           /* If cos(theta) <= COS90D, theta >= PI/2 - 1e-6 rad. */
 #define ONE_MINUS_COSZERO 1.0E-12
 #define Sep_photons 1000
-#define nang 3601
-#define nang_is 1801
+#define nang 361
+#define nang_is 181
 
 /* DECLARE FUNCTIONS */
 double RandomGen(char Type, long Seed, long *Status);
