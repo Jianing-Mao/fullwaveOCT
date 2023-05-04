@@ -4,16 +4,14 @@ format compact
 clc
 home
 %% load the desired mus and TT parameters of different particle diameters 
-load us_4_1300.mat
-load us_6_1300.mat
-para4 = load('parameters_4.txt');
-para6 = load('parameters_6.txt');
+load us_4_1300.mat % scattering coefficient of 4 mu_m diameter particles
+load us_6_1300.mat % scattering coefficient of 6 mu_m diameter particles
+para4 = load('parameters_4.txt'); % TT SPF parameters of 4 mu_m diameter particles
+para6 = load('parameters_6.txt'); % TT SPF parameters of 6 mu_m diameter particles
 
 %% set paras
-
-%%% USER CHOICES %%%%%%%% <-------- You must set these parameters ------
+%%% USER CHOICES %%%%%%%%
 SAVEON      = 1;        % 1 = save myname_T.bin, myname_H.mci
-% 0 = don't save. Just check the program.
 samplePoints = 1024; %number of wavelength sampling
 myname      = 'infi';% name for files: myname_T.bin, myname_H.mci
 Nphotons    = 5000;      	% number of photons
@@ -35,15 +33,15 @@ Ndetectors  = 1;      % Number of Aline per BScan
 % det_radius  = nm*1e-7*2/pi/atan(beamw/2/flens);    % Width of the beam at the imaging lens
 det_radius = 3/2*binsize;
 
-% cos_accept  = cos(atan(beamw/2/flens)); % Cos of the accepted angle
+% Cos of the accepted angle
 cos_accept = 0.9961;
-% only used if launchflag == 1 (manually set launch trajectory): (not in use)
+% manually set launch trajectory
 ux0         = 0.0;      % trajectory projected onto x axis
 uy0         = 0.0;      % trajectory projected onto y axis
 uz0         = sqrt(1 - ux0^2 - uy0^2); % such that ux^2 + uy^2 + uz^2 = 1
 
 % Bias scattering parameter
-p         = 0.5;
+p  = 0.5;
 dx = binsize;
 dy = binsize;
 dz = binsize;
@@ -59,24 +57,24 @@ xmin = min(x);
 xmax = max(x);
 %%%%%%%%%%%%
 %% Create Sample
-%%%
+%%% number of mediums
 Nt = 9;
-
+%%% set your structure and parameters for each wavelength
 for jj=1:samplePoints
     myname = ['infi',num2str(jj)]
     for i=1:Nt
         if i == 1
             nrv(i)   = 1.33;
         elseif i == 4
-            nrv(i) = 1.33;
-            muav(i) = 0;
-            musv(i)= us_4(jj);
-            gv(i) = 0.9;
-            gf(i) = para4(jj,1);
-            gb(i) = para4(jj,2);
-            alf(i) = para4(jj,3);
-            alb(i) = para4(jj,4);
-            C(i) = para4(jj,5);
+            nrv(i) = 1.33; % refraction index (set uniform for every medium)
+            muav(i) = 0; % absorption coefficient
+            musv(i)= us_4(jj); % scattering coefficient
+            gv(i) = 0.9; % anisotropy
+            gf(i) = para4(jj,1); % forward anisotropy
+            gb(i) = para4(jj,2); % backward anisotropy
+            alf(i) = para4(jj,3); % forward enhancing
+            alb(i) = para4(jj,4); % backward enhancing
+            C(i) = para4(jj,5); % balance factor
         elseif i==5
             nrv(i) = 1.33;
             muav(i) = 0;
@@ -103,11 +101,11 @@ for jj=1:samplePoints
     
     T = T + 1;      %
     
-    zsurf = 0.0000;  % position of air/skin surface
-    
+    zsurf = 0.0000;  % position of surface
+    %%% set the structure
     for iz=1:Nz % for every depth z(iz)
         
-        % air
+        % water
         if iz<=round(0.01/dz)
             T(:,:,iz) =1;
         end
@@ -117,10 +115,6 @@ for jj=1:samplePoints
         end
         
     end % iz
-    
-    %%%%%%%%%%
-    % Prepare Monte Carlo
-    %%%
     
     
     

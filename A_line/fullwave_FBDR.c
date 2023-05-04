@@ -449,8 +449,7 @@ int main(int argc, const char *argv[])
                  s = dimensionless stepsize
                  x, uy, uz are cosines of current photon trajectory
                  *****/
-                while ((rnd = RandomNum) <= 0.0)
-                    ;              /* yields 0 < rnd <= 1 */
+                while ((rnd = RandomNum) <= 0.0);              /* yields 0 < rnd <= 1 */
                 sleft = -log(rnd); /* dimensionless step */
 
                 if (photon_status == DEAD)

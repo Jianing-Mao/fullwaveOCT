@@ -16,7 +16,7 @@ for i=1:length(lam)
 us(i)=(C(i).sca)*pho*1e16;
 end
 eval(['us_', num2str(dia*1e6), '=', 'us', ';']);
-save(['us_',num2str(dia*1e6),'_1300.mat'],['us_', num2str(dia*1e6)]);
+save(['us_',num2str(dia*1e6),'_1300.mat'],['us_', num2str(dia*1e6)]); %save
 
 function [S,ang,f,C1] = Mie(lam,dia,ns,nm,nang)
 for i =1:length(lam)
