@@ -37,7 +37,7 @@ Run [lookFBDR.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/loo
 # Example
 
 # To be implement
-* Integrate all parameters into a calling function (now you need to carefully check the parameters of the generation, running, and viewing codes)
+* Integrate all parameters into a calling function (now we need to carefully check the parameters of the generation, running, and viewing codes)
 * More realistic light source
 * ......
 
