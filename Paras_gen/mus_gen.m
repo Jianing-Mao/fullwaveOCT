@@ -1,11 +1,11 @@
 clear
 close all
 dia = 4e-6;
-num = 1024;
+numsamplePoints = 1024;
 nm=1.33;
 ns = 1.58;
 nang=361;
-lam = linspace(1250e-9,1350e-9,num)*1e9;
+lam = linspace(1250e-9,1350e-9,numsamplePoints)*1e9;
 [~,ang,Miee,C] = Mie(lam/1e9,dia,ns,nm,nang);
 k0 = 2*pi/(1260/1e9)*nm;
 nang = 361;
