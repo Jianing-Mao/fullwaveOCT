@@ -663,7 +663,7 @@ int main(int argc, const char *argv[])
                         rnd = RandomNum;
                         find_sample = 0;
                         if (g == 0.0)
-                            costheta = 2.0 * rnd - 1.0;
+                            costheta_B = 2.0 * rnd - 1.0;
                         else
                         {
                             if (g != 1)
@@ -832,7 +832,7 @@ int main(int argc, const char *argv[])
                             rnd = RandomNum;
                             find_sample = 0;
                             if (g == 0.0)
-                                costheta = 2.0 * rnd - 1.0;
+                                costheta_B = 2.0 * rnd - 1.0;
                             else
                             {
 

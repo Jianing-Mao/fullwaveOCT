@@ -3,7 +3,7 @@ clear
 format compact
 clc
 home
-%% load the desired mus and TT parameters of different particle diameters 
+%% load the desired mus and TT parameters of different particle diameters
 load us_4_1300.mat % scattering coefficient of 4 mu_m diameter particles
 load us_6_1300.mat % scattering coefficient of 6 mu_m diameter particles
 para4 = load('parameters_4.txt'); % TT SPF parameters of 4 mu_m diameter particles

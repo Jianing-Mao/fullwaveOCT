@@ -45,17 +45,17 @@ Nt = A(n);  n = n + 1;
 BDR_all = zeros(samplePoints,samplePoints,Ndetectors);
 BDR = zeros(samplePoints,samplePoints);
 for j = 1:Ndetectors
-disp(j)
-jj=j;
+    disp(j)
+    jj=j;
     myname = ['BDR_',num2str(jj)];
-%% Load path lengths of detected photons DetS
-filename = sprintf('%s.bin',myname);
+    %% Load path lengths of detected photons DetS
+    filename = sprintf('%s.bin',myname);
     fid = fopen(filename, 'rb');
     DetBDR = [fread(fid, 'double')];
     fclose(fid);
- 
-DetBDR = reshape(DetBDR,samplePoints,[])';
-BDR_all(:,:,j) = DetBDR;
-BDR(:,j) =DetBDR(:,Ndetectors);
+    
+    DetBDR = reshape(DetBDR,samplePoints,[])';
+    BDR_all(:,:,j) = DetBDR;
+    BDR(:,j) =DetBDR(:,Ndetectors);
 end
 figure;imagesc(10*log10(BDR));colormap jet

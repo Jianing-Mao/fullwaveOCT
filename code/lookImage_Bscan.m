@@ -43,15 +43,15 @@ zsurf = A(n); n = n + 1;
 Nt = A(n);  n = n + 1;
 
 for j = 1:Ndetectors
-disp(j)
+    disp(j)
     myname = ['sig_',num2str(j)];
-%% Load path lengths of detected photons DetS
-filename = sprintf('%s.bin',myname);
+    %% Load path lengths of detected photons DetS
+    filename = sprintf('%s.bin',myname);
     fid = fopen(filename, 'rb');
     Detsig = [fread(fid, 'double')];
     fclose(fid);
     sig_temp = Detsig(1:2:end)+1i*Detsig(2:2:end);
-sig(:,j) = sig_temp;
+    sig(:,j) = sig_temp;
 end
 sig = interp1(k_nolin,sig,k_lin);
 
@@ -60,7 +60,7 @@ sig = interp1(k_nolin,sig,k_lin);
 noise_amp = 0.00;
 noise1 = raylrnd(noise_amp/1.253*ones(size(sig))) .* exp(1i.*2.*pi.*rand(size(sig)));
 noise2 = raylrnd(noise_amp/1.253*ones(size(sig))) .* exp(1i.*2.*pi.*rand(size(sig)));
-ref_amp = 1; 
+ref_amp = 1;
 
 %Make the interference with the reference arm and calculate the intensity
 I = abs(sig + 1+noise1).^2 - abs(sig - 1+noise2).^2;
