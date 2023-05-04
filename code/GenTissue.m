@@ -28,7 +28,7 @@ zs          = 0.0001; % z of source must start in simulation
 
 % Set detection parameter
 radius      = 0.1;     % Half width of the BScan
-Ndetectors  = 1;      % Number of Aline per BScan
+Ndetectors  = 1;      % Number of Aline per BScan, 1 for Aline simulation
 
 % det_radius  = nm*1e-7*2/pi/atan(beamw/2/flens);    % Width of the beam at the imaging lens
 det_radius = 3/2*binsize;
