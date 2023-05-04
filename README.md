@@ -66,4 +66,4 @@ Run [lookImage_Bscan.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/c
 * ...
 
 # Acknowledgement
-The codes are built on the open-source code for MC in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
+The codes are built on [MatScat](https://ww2.mathworks.cn/matlabcentral/fileexchange/36831-matscat), open-source codes in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
