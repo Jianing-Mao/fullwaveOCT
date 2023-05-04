@@ -36,5 +36,10 @@ Run [lookFBDR.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/code/loo
 
 # Example
 
+# To be implement
+* Integrate all parameters into a calling function (now you need to carefully check the parameters of the generation, running, and viewing codes)
+* More realistic light source
+* ......
+
 # Acknowledgement
 The codes are built on the open-source code for MC in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
