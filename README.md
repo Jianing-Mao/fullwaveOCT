@@ -1,8 +1,7 @@
 # Full-Wavelength-Monte-Carlo
 Fast Monte Carlo simulation of full-wavelength backscattered diffuse reflectance (F-BDR) and FD-OCT
 
-![FBDR](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/example/FBDR.png)
-![full-wavelength FD-OCT B-scan image](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/example/Bscan_image.png)
+![full-wavelength FD-OCT B-scan image](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/example/Bscan.png)
 ## Get Started
 The code is builded in MATLAB R2020a and ANSI C. Please install the [MatScat](https://ww2.mathworks.cn/matlabcentral/fileexchange/36831-matscat) in your MATLAB.
 ## Prepare scattering parameters
@@ -67,4 +66,4 @@ Run [lookImage_Bscan.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/c
 * ...
 
 # Acknowledgement
-The codes are built on the open-source code for MC in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
+The codes are built on [MatScat](https://ww2.mathworks.cn/matlabcentral/fileexchange/36831-matscat), open-source codes in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
