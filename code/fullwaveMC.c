@@ -534,7 +534,7 @@ int main(int argc, const char *argv[])
                                 // Def: float *DetW, *DetL, *DetS;
                                 // DetS  = malloc(sizeof(float));
                                 DetS = realloc(DetS, (c_photon + 1) * sizeof(float));
-                                DetS[c_photon] = s_total+dz;
+                                DetS[c_photon] = s_total;
 
                                 Detsnum = realloc(Detsnum, (c_photon + 1) * sizeof(int));
                                 Detsnum[c_photon] = num_s;
