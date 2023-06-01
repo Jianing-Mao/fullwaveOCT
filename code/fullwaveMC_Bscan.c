@@ -1062,7 +1062,7 @@ int main(int argc, const char *argv[])
         {
             for (temp_lin = 0; temp_lin < c_photon; temp_lin++)
             {
-                DetS[temp_lin] = n_cor * (DetS[temp_lin] + 0.001);
+                DetS[temp_lin] = n_cor * (DetS[temp_lin]);
                 for (temp_lin2 = 0; temp_lin2 < samplePoints; temp_lin2++)
                 {
                     if (DetS[temp_lin] >= (0 + (temp_lin2 * z_min)) && DetS[temp_lin] < (z_min + (temp_lin2 * z_min)))
@@ -1076,7 +1076,7 @@ int main(int argc, const char *argv[])
         {
             for (temp_lin = c_photon_mask[aa - 2]; temp_lin < c_photon_mask[aa - 2] + c_photon; temp_lin++)
             {
-                DetS[temp_lin] = n_cor * (DetS[temp_lin] + 0.001);
+                DetS[temp_lin] = n_cor * (DetS[temp_lin]);
                 for (temp_lin2 = 0; temp_lin2 < samplePoints; temp_lin2++)
                 {
                     if (DetS[temp_lin] >= (0 + (temp_lin2 * z_min)) && DetS[temp_lin] < (z_min + (temp_lin2 * z_min)))
