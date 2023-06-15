@@ -72,11 +72,7 @@ I = sqrt(S_k).*I;
 k = (k_lin);
 %Apply low pass filter and hanning window
 ksampling = 2*pi/(k(1)-k(2));
-if maxDepth == 0
-    rawAline = (I).*hanning(length(k));
-else
-    rawAline = lowpass(I'.*hann(length(k)),maxDepth,ksampling);
-end
+rawAline = (I).*hanning(length(k));
 % rawAline = I;
 %Calculate Aline
 M10 = length(rawAline(:,1));

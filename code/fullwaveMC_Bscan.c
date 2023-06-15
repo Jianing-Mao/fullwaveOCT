@@ -598,14 +598,6 @@ int main(int argc, const char *argv[])
                             ix = floor(Nx / 2 + x / dx);
                             iy = floor(Ny / 2 + y / dy);
                             iz = floor(z / dz);
-                            if (ix >= Nx)
-                                ix = Nx - 1;
-                            if (iy >= Ny)
-                                iy = Ny - 1;
-                            if (ix < 0)
-                                ix = 0;
-                            if (iy < 0)
-                                iy = 0;
 
                             //*** ESCAPE or not
                             if ((surfflag == 1) & (z <= zsurf)) // escape at surface
