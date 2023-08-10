@@ -1,5 +1,5 @@
-# Full-Wavelength-Monte-Carlo
-Fast Monte Carlo simulation of full-wavelength backscattered diffuse reflectance (F-BDR) and FD-OCT
+# Full-Spectrum-Monte-Carlo
+Fast Monte Carlo simulation of full-spectrum backscattered diffuse reflectance (F-BDR) and FD-OCT
 
 ![full-wavelength FD-OCT B-scan image](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/example/Bscan.png)
 ## Get Started
