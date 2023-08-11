@@ -65,5 +65,12 @@ Run [lookImage_Bscan.m](https://github.com/Jianing-Mao/fullwaveOCT/blob/master/c
 * More realistic light source
 * ...
 
+# Citation
+If you use this code in your own research, please cite the following papers:
+
+https://opg.optica.org/boe/fulltext.cfm?uri=boe-14-9-4644&id=536404
+
+https://opg.optica.org/boe/fulltext.cfm?uri=boe-13-12-6317&id=518908
+
 # Acknowledgement
 The codes are built on [MatScat](https://ww2.mathworks.cn/matlabcentral/fileexchange/36831-matscat), open-source codes in [OMLC](https://omlc.org/software/mc/) and [OCT_MC](https://github.com/RMTariant/OCT_MC). We sincerely appreciate the authors for sharing their codes.
